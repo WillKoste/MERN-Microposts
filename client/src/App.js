@@ -1,14 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
+import {Provider} from 'react-redux';
+import store from './store';
+import {getPosts} from './actions/post';
 
 import Post from './components/posts/Post';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    store.dispatch(getPosts());
+  }, [getPosts]);
+  
   return (
-    <div className="App">
-      <h1>Microsposts</h1>
-      <Post />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <h1>Microsposts</h1>
+        <Post />
+      </div>
+    </Provider>
   );
 }
 
