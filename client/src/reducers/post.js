@@ -21,6 +21,18 @@ export default function(state = initialState, action){
         posts: payload,
         loading: false
       }
+    case ADD_POST:
+      return {
+        ...state,
+        posts: [payload, ...state.posts],
+        loading: false
+      }
+    case REMOVE_POST:
+      return {
+        ...state,
+        posts: state.posts.map(post => post._id === payload.id ? {...post} : post),
+        loading: true
+      }
     case POST_ERROR:
       return {
         ...state,
