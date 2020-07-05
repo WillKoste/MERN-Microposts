@@ -2,6 +2,7 @@ import React, {useEffect, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {getPosts} from '../../actions/post';
 import PropTypes from 'prop-types'
+import Moment from 'react-moment';
 
 const Post = ({getPosts, post: {posts, loading, error}}) => {
   useEffect(() => {
@@ -12,7 +13,10 @@ const Post = ({getPosts, post: {posts, loading, error}}) => {
     <Fragment>
       {posts.posts.map(post => (
         <div className="post">
-          <h3>{post.title}</h3>
+          <h2>{post.title}</h2>
+          <div className="created-at">
+            <Moment format="MM/DD/YYYY hh:mm a"><small>{post.createdAt}</small></Moment>
+          </div>
           <p>{post.message}</p>
         </div>
       ))}

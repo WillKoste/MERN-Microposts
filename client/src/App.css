@@ -10,11 +10,16 @@
   margin-bottom: 1rem;
 }
 
+.posts-container{
+  margin-top: 2.1rem;
+}
+
 .post{
   position: relative;
   border: 1px solid #5bd658;
   background: #bcffb8;
   padding: .6rem .6rem 1.9rem .6rem;
+  margin-bottom: 1.8rem;
 }
 
 .created-at{
