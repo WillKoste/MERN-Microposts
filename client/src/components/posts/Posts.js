@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import Spinner from '../filler/Spinner';
 import Post from './Post';
 import post from '../../reducers/post';
+import PostAdd from './PostAdd';
 
 const Posts = ({getPosts, post: {posts, loading, error}}) => {
   useEffect(() => {
@@ -13,10 +14,11 @@ const Posts = ({getPosts, post: {posts, loading, error}}) => {
   
   return (
     <div className="container">
+      <h1>Latest Posts</h1>
+      <PostAdd />
+      <hr/>
       {loading ? <Spinner /> : (
         <Fragment>
-          <h1>Latest Posts</h1>
-          <hr/>
           <div className="posts-container">
             <Post key={post._id} post={post} />
           </div>

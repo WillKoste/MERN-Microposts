@@ -15,7 +15,7 @@ const Post = ({getPosts, post: {posts, loading, error}}) => {
         <div className="post">
           <h2>{post.title}</h2>
           <div className="created-at">
-            <Moment format="MM/DD/YYYY hh:mm a"><small>{post.createdAt}</small></Moment>
+            <Moment format="MM-DD-YYYY, h:mm a"><small>{post.createdAt}</small></Moment>
           </div>
           <p>{post.message}</p>
         </div>
